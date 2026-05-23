@@ -1,0 +1,154 @@
+import React, { useState, useEffect } from "react";
+import CourseCard from "../../components/CourseCard";
+import { coursesAPI } from "../../api";
+
+const EnrolledCourses = () => {
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("all");
+  const [error, setError] = useState("");
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const res = await coursesAPI.getEnrolled();
+      
+      const resCoursesData = Array.isArray(res.data?.courses)
+        ? res.data.courses
+        : Array.isArray(res.data)
+          ? res.data
+          : [];
+
+      setCourses(resCoursesData);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to fetch enrolled courses. Please check your backend connection.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+
+    const handleLessonCompleted = () => {
+      fetchData();
+    };
+    window.addEventListener('lessonCompleted', handleLessonCompleted);
+    return () => {
+      window.removeEventListener('lessonCompleted', handleLessonCompleted);
+    };
+  }, []);
+
+  const filteredCourses = courses.filter((course) => {
+    const matchesSearch =
+      course.title?.toLowerCase().includes(search.toLowerCase()) ||
+      course.description?.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory =
+      category === "all" ||
+      course.category?.toLowerCase() === category.toLowerCase();
+    return matchesSearch && matchesCategory;
+  });
+
+  // Extract unique categories for filter pills
+  const categories = [
+    "all",
+    ...new Set(courses.map((c) => c.category).filter(Boolean)),
+  ];
+
+  return (
+    <div className="space-y-6 animate-in">
+      {/* Header & Filter bars */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h2 className="text-2xl font-black text-violet-955 leading-tight">
+            My Enrolled Courses
+          </h2>
+          <p className="text-violet-400 text-xs font-bold mt-1">
+            Pick up where you left off.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          {/* Search Input */}
+          <div className="relative flex-1 sm:w-64">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search my courses..."
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-violet-50/50 border border-violet-200/80 text-violet-950 placeholder-violet-400/80 text-xs focus:outline-none focus:border-violet-500 focus:bg-white focus:ring-2 focus:ring-violet-100 transition-all duration-200"
+            />
+            <span className="absolute left-3.5 top-3 text-violet-450 text-xs">
+              🔍
+            </span>
+          </div>
+
+          <button
+            onClick={fetchData}
+            className="btn-secondary text-xs px-4 py-2 flex items-center justify-center gap-2"
+          >
+            🔄 Sync
+          </button>
+        </div>
+      </div>
+
+      {error && (
+        <div className="p-4 rounded-xl bg-rose-50 border border-rose-100 text-rose-600 text-xs font-semibold">
+          ⚠️ {error}
+        </div>
+      )}
+
+      {/* Categories Filter pills */}
+      <div className="flex flex-wrap gap-2">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setCategory(cat)}
+            className={`px-4 py-1.5 rounded-full text-xs font-bold capitalize border transition-all duration-200
+              ${
+                category === cat
+                  ? "bg-violet-600 border-violet-600 text-white shadow-glow"
+                  : "bg-violet-50 border-violet-200 text-violet-700 hover:bg-violet-100"
+              }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {loading ? (
+        <div className="min-h-[40vh] flex flex-col items-center justify-center gap-4">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-violet-500" />
+          <p className="text-violet-400 text-xs font-semibold">
+            Syncing your courses...
+          </p>
+        </div>
+      ) : filteredCourses.length === 0 ? (
+        <div className="text-center py-16 border border-dashed border-violet-200/60 bg-violet-50/20 rounded-2xl">
+          <span className="text-4xl mb-4 block">📦</span>
+          <h3 className="text-violet-950 font-bold text-base mb-1">
+            No Courses Found
+          </h3>
+          <p className="text-violet-450 text-xs font-semibold">
+            You haven't enrolled in any courses matching this filter.
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredCourses.map((course) => (
+            <CourseCard
+              key={course._id}
+              course={course}
+              progress={course.progressPercent || 0}
+              isEnrolled={true}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default EnrolledCourses;
