@@ -1,0 +1,32 @@
+const mongoose = require("mongoose");
+
+const certificateSchema = new mongoose.Schema(
+  {
+    studentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    courseId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course",
+      required: true,
+    },
+    issuedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User", // Mentor
+      required: true,
+    },
+    status: {
+      type: String,
+      enum: ["Generated", "Claimed"],
+      default: "Generated",
+    },
+  },
+  { timestamps: true }
+);
+
+// A student can only have one certificate per course
+certificateSchema.index({ studentId: 1, courseId: 1 }, { unique: true });
+
+module.exports = mongoose.model("Certificate", certificateSchema);

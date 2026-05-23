@@ -1,0 +1,222 @@
+[
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 1,
+    "title": "Introduction to Node.js",
+    "description": "Understand Node.js architecture, runtime environment, and event-driven programming.",
+    "duration": 35,
+    "videoUrl": "https://example.com/videos/node-intro",
+    "isPreview": true,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 2,
+    "title": "Installing Node.js & Project Setup",
+    "description": "Setup Node.js environment and initialize backend projects using npm.",
+    "duration": 40,
+    "videoUrl": "https://example.com/videos/project-setup",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 3,
+    "title": "Understanding Modules in Node.js",
+    "description": "Learn CommonJS modules, exports, imports, and reusable code structure.",
+    "duration": 32,
+    "videoUrl": "https://example.com/videos/modules",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 4,
+    "title": "Introduction to Express.js",
+    "description": "Learn how Express.js simplifies backend API development.",
+    "duration": 45,
+    "videoUrl": "https://example.com/videos/express-intro",
+    "isPreview": true,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 5,
+    "title": "Creating REST APIs",
+    "description": "Build CRUD APIs using Express routes and controllers.",
+    "duration": 55,
+    "videoUrl": "https://example.com/videos/rest-api",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 6,
+    "title": "Middleware in Express.js",
+    "description": "Understand custom middleware, built-in middleware, and request flow.",
+    "duration": 42,
+    "videoUrl": "https://example.com/videos/middleware",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 7,
+    "title": "MongoDB & Mongoose Basics",
+    "description": "Connect MongoDB database and create schemas using Mongoose.",
+    "duration": 50,
+    "videoUrl": "https://example.com/videos/mongodb-mongoose",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 8,
+    "title": "Authentication with JWT",
+    "description": "Implement secure JWT authentication and protected routes.",
+    "duration": 60,
+    "videoUrl": "https://example.com/videos/jwt-auth",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 9,
+    "title": "Password Hashing with bcrypt",
+    "description": "Secure user passwords using bcrypt hashing techniques.",
+    "duration": 30,
+    "videoUrl": "https://example.com/videos/bcrypt",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 10,
+    "title": "Role-Based Access Control",
+    "description": "Implement admin and user authorization in backend APIs.",
+    "duration": 45,
+    "videoUrl": "https://example.com/videos/rbac",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 11,
+    "title": "Error Handling in Express",
+    "description": "Build centralized error handling middleware for APIs.",
+    "duration": 35,
+    "videoUrl": "https://example.com/videos/error-handling",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 12,
+    "title": "File Uploads with Multer",
+    "description": "Upload images and files using Multer middleware.",
+    "duration": 48,
+    "videoUrl": "https://example.com/videos/multer",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 13,
+    "title": "Pagination & Filtering APIs",
+    "description": "Implement scalable pagination and advanced filtering.",
+    "duration": 38,
+    "videoUrl": "https://example.com/videos/pagination",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 14,
+    "title": "MongoDB Aggregation Pipeline",
+    "description": "Learn aggregation stages like $match, $group, and $project.",
+    "duration": 65,
+    "videoUrl": "https://example.com/videos/aggregation",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 15,
+    "title": "Building Real-Time APIs with Socket.IO",
+    "description": "Create real-time communication systems using Socket.IO.",
+    "duration": 52,
+    "videoUrl": "https://example.com/videos/socketio",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 16,
+    "title": "API Security Best Practices",
+    "description": "Secure backend APIs against common vulnerabilities.",
+    "duration": 44,
+    "videoUrl": "https://example.com/videos/security",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 17,
+    "title": "Testing APIs with Jest & Supertest",
+    "description": "Write automated tests for backend APIs.",
+    "duration": 46,
+    "videoUrl": "https://example.com/videos/testing",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 18,
+    "title": "Deploying Backend Applications",
+    "description": "Deploy Node.js applications using Render and MongoDB Atlas.",
+    "duration": 40,
+    "videoUrl": "https://example.com/videos/deployment",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 19,
+    "title": "Backend Project Architecture",
+    "description": "Learn scalable folder structures and clean architecture principles.",
+    "duration": 37,
+    "videoUrl": "https://example.com/videos/architecture",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  },
+  {
+    "courseTitle": "Node.js & Express Mastery",
+    "lessonNumber": 20,
+    "title": "Final Full-Stack Backend Project",
+    "description": "Build and integrate a production-ready backend system.",
+    "duration": 90,
+    "videoUrl": "https://example.com/videos/final-project",
+    "isPreview": false,
+    "status": "published",
+    "pdfUrl": "https://mast.iittp.ac.in/ATSNPDE25/PythonBasics.pdf"
+  }
+]
